@@ -1,0 +1,40 @@
+{
+  "commands": [
+    {
+      "command": "torvix",
+      "explanation": "Displays the definition of Torvix and a list of all available commands with brief descriptions.",
+      "use_case": "For new users to get an overview or as a quick reference when forgetting commands.",
+      "example": "torvix → Outputs: 'Torvix is an AI-powered terminal assistant... Available commands: torvix setup - Configure AI providers...'"
+    },
+    {
+      "command": "torvix setup / torvix config",
+      "explanation": "Interactive setup to select and configure AI providers (1. ChatGPT, 2. Gemini, 3. Deepseek, 4. Perplexity, 5. Claude, 6. Grok, 7. Torvix) and store their API keys securely. 'config' allows viewing/editing existing setups.",
+      "use_case": "Initial setup or updating API keys for multiple models to enable AI queries.",
+      "example": "torvix setup → 'Select providers: 1' → 'Enter ChatGPT API key: sk-xxx' → Stores key and sets default."
+    },
+    {
+      "command": "torvix \"prompt\"",
+      "explanation": "Sends a natural language prompt to the selected AI model, displays the response, and executes suggested commands step-by-step with user confirmation.",
+      "use_case": "For translating everyday language into terminal actions, like automating Git tasks or fixing errors.",
+      "example": "torvix \"push this code to github\" → AI suggests 'RUN: git add .', 'RUN: git commit -m \"Update\"', 'RUN: git push' → Asks 'Run git add .? [y/n]' for each."
+    },
+    {
+      "command": "torvix reset / torvix reset [model]",
+      "explanation": "Clears all stored API keys and configs (with confirmation), or just for a specific model, allowing re-entry via setup.",
+      "use_case": "When API keys expire, to switch accounts, or fix config issues.",
+      "example": "torvix reset chatgpt → 'Confirm reset for ChatGPT? [y/n]' → Removes key; 'torvix reset' clears all."
+    },
+    {
+      "command": "torvix --version / torvix -v",
+      "explanation": "Displays the current version of Torvix.",
+      "use_case": "For checking updates, compatibility, or reporting bugs.",
+      "example": "torvix --version → Outputs: 'Torvix v1.0.0'"
+    },
+    {
+      "command": "torvix --help / torvix -h",
+      "explanation": "Same as 'torvix' alone: Shows Torvix definition and list of commands.",
+      "use_case": "Quick help reference, especially in scripts or for aliases.",
+      "example": "torvix -h → Outputs the same as 'torvix' command."
+    }
+  ]
+}

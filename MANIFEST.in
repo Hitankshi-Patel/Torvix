@@ -1,0 +1,33 @@
+# Include the README and other documentation files
+include README.md
+include LICENSE
+include CHANGELOG.md
+include CONTRIBUTING.md
+
+# Include configuration files
+include pyproject.toml
+include requirements.txt
+include torvix.json
+
+# Include all Python files in the package
+recursive-include torvix *.py
+recursive-include torvix *.json
+recursive-include torvix *.yaml
+recursive-include torvix *.yml
+
+# Include tests
+recursive-include tests *.py
+
+# Exclude unnecessary files
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *.pyd
+global-exclude __pycache__
+global-exclude .DS_Store
+global-exclude *.so
+global-exclude .git*
+global-exclude .coverage
+global-exclude .pytest_cache
+prune build
+prune dist
+prune *.egg-info

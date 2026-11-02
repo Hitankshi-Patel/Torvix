@@ -1,0 +1,2 @@
+[console_scripts]
+torvix = torvix.cli:main

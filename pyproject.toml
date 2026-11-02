@@ -1,0 +1,138 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "torvix"
+version = "1.1.0"
+description = "AI-powered terminal assistant for natural language command execution"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Torvix Team", email = "contact@torvix.ai"}
+]
+maintainers = [
+    {name = "Torvix Team", email = "contact@torvix.ai"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Shells",
+    "Topic :: Utilities",
+    "Topic :: Terminals",
+    "Environment :: Console",
+]
+keywords = ["ai", "terminal", "cli", "assistant", "automation", "natural-language", "git", "devops"]
+requires-python = ">=3.8"
+dependencies = [
+    "click>=8.0.0",
+    "requests>=2.28.0",
+    "cryptography>=3.4.8",
+    "keyring>=23.0.0",
+    "rich>=12.0.0",
+    "pyyaml>=6.0",
+    "colorama>=0.4.4",
+    "prompt-toolkit>=3.0.0",
+]
+
+[project.optional-dependencies]
+ai-providers = [
+    "openai>=1.0.0",
+    "google-generativeai>=0.3.0",
+    "anthropic>=0.7.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "mypy>=0.950",
+    "pre-commit>=2.17.0",
+]
+all = [
+    "torvix[ai-providers,dev]"
+]
+
+[project.urls]
+Homepage = "https://github.com/torvix/torvix"
+Documentation = "https://torvix.readthedocs.io/"
+Repository = "https://github.com/torvix/torvix"
+"Bug Reports" = "https://github.com/torvix/torvix/issues"
+Changelog = "https://github.com/torvix/torvix/blob/main/CHANGELOG.md"
+
+[project.scripts]
+torvix = "torvix.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["torvix*"]
+exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+torvix = ["*.json", "*.yaml", "*.yml"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--strict-markers",
+    "--strict-config",
+    "--verbose",
+    "--cov=torvix",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+    "--cov-report=xml",
+]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[[tool.mypy.overrides]]
+module = [
+    "keyring.*",
+    "rich.*",
+    "click.*",
+]
+ignore_missing_imports = true
