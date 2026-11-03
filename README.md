@@ -2,24 +2,27 @@
 
 Torvix translates natural language into terminal commands and runs them safely with your confirmation.
 
-<!-- <table>
+## Screenshots
+
+<table>
   <tr>
     <td>
-      <img width="748" height="318" alt="image" src="https://github.com/user-attachments/assets/5202bef5-e898-48bb-be78-df4026e3b5d9" />
+      <img src="asset/1.png" alt="Torvix Screenshot 1" width="100%">
     </td>
     <td>
-      <img width="744" height="444" alt="image" src="https://github.com/user-attachments/assets/1fbb3624-93a4-44a5-bcc9-194347f43a5a" />
+      <img src="asset/2.png" alt="Torvix Screenshot 2" width="100%">
     </td>
   </tr>
   <tr>
     <td>
-      <img width="777" height="513" alt="image" src="https://github.com/user-attachments/assets/e820a44f-e81f-41c6-b0db-8fab7b87f40b" />
+      <img src="asset/3.png" alt="Torvix Screenshot 3" width="100%">
     </td>
     <td>
-      <img width="990" height="431" alt="image" src="https://github.com/user-attachments/assets/22de132c-dac9-4066-b71d-acbdb528bcd3" />
+      <img src="asset/4.png" alt="Torvix Screenshot 4" width="100%">
     </td>
   </tr>
-</table> -->
+</table>
+
 
 
 ## Key features
